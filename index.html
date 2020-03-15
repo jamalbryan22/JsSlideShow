@@ -1,0 +1,27 @@
+<script>
+  var i = 0;
+  var images = [];
+  var time = 3000; // milliseconds
+
+  images[0] = "Image1.jpg";
+  images[1] = "Image2.jpg";
+  images[2] = "Image3.jpg";
+  images[3] = "Image4.jpg";
+  images[4] = "Image5.jpg";
+
+  // Change Image
+  function changeImg() {
+    document.slide.src = images[i];
+    if (i < images.length - 1) {
+      i++;
+    } else {
+      i = 0;
+    }
+
+    setTimeout("changeImg()", time);
+  }
+
+  window.onload = changeImg;
+</script>
+
+<img name="slide" width="800" height="800" alt="js slideshow" />
